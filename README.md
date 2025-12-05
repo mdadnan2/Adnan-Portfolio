@@ -25,7 +25,7 @@ This portfolio website is a comprehensive showcase of my professional journey, t
 Mohammad-Adnan/
 ├── 📁 public/                    # Static assets
 │   ├── favicon.ico
-│   ├── Mohammad_Adnan_01.pdf     # Resume/CV
+│   ├── Mohammad_Adnan.pdf     # Resume/CV
 │   └── robots.txt
 ├── 📁 src/
 │   ├── 📁 components/            # React components
@@ -116,13 +116,13 @@ Mohammad-Adnan/
 
 ### Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
+| Command             | Description               |
+| ------------------- | ------------------------- |
+| `npm run dev`       | Start development server  |
+| `npm run build`     | Build for production      |
 | `npm run build:dev` | Build in development mode |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
+| `npm run preview`   | Preview production build  |
+| `npm run lint`      | Run ESLint                |
 
 ## 🎨 Design Philosophy
 
@@ -140,11 +140,11 @@ Mohammad-Adnan/
 
 ## 📱 Responsive Breakpoints
 
-| Device | Breakpoint | Layout |
-|--------|------------|--------|
-| Mobile | < 768px | Single column, stacked components |
-| Tablet | 768px - 1024px | Two-column grid where applicable |
-| Desktop | > 1024px | Multi-column layouts, full features |
+| Device  | Breakpoint     | Layout                              |
+| ------- | -------------- | ----------------------------------- |
+| Mobile  | < 768px        | Single column, stacked components   |
+| Tablet  | 768px - 1024px | Two-column grid where applicable    |
+| Desktop | > 1024px       | Multi-column layouts, full features |
 
 ## 🔧 Customization
 

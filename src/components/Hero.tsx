@@ -87,7 +87,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto"
           >
-            1.8+ Years Experience | Node.js, TypeScript, REST APIs
+            1.9+ Years Experience | Node.js, TypeScript, REST APIs
           </motion.p>
 
           {/* Location */}

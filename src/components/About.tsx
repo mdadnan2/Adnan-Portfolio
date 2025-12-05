@@ -43,7 +43,7 @@ const About = () => {
             Professional Summary
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-3xl mx-auto">
-            Backend Developer with 1.8+ years of hands-on experience specializing in building robust, 
+            Backend Developer with 1.9+ years of hands-on experience specializing in building robust, 
             scalable server-side applications using modern JavaScript frameworks.
           </p>
         </motion.div>
