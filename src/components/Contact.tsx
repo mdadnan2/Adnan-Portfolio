@@ -103,7 +103,7 @@ const Contact = () => {
             size="lg"
             onClick={() => {
               const link = document.createElement('a');
-              link.href = '/Mohammad_Adnan_01.pdf';
+              link.href = '/Mohammad_Adnan.pdf';
               link.download = 'Mohammad_Adnan_Resume.pdf';
               link.click();
             }}
