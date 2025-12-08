@@ -7,7 +7,9 @@ import { Server, Code, Database, GitBranch, Shield, Cloud } from "lucide-react";
 
 const Skills = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { margin: "-100px" });
+  const skillsGridRef = useRef(null);
+  const isSkillsGridInView = useInView(skillsGridRef, { margin: "-100px" });
 
   const skillCategories = [
     {
@@ -72,12 +74,12 @@ const Skills = () => {
         </motion.div>
 
         {/* All Skills */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={skillsGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              animate={isSkillsGridInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               className="space-y-4"
             >
@@ -88,10 +90,10 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.3, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
-                    whileHover={{ scale: 1.05 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isSkillsGridInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ duration: 0.4, delay: skillIndex * 0.08 }}
+                    whileHover={{ scale: 1.1, y: -5 }}
                   >
                     <Badge 
                       variant="secondary" 

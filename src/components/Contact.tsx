@@ -7,7 +7,7 @@ import { Mail, Linkedin, Github, Phone, MapPin, Download } from "lucide-react";
 
 const Contact = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { margin: "-100px" });
 
   const contactInfo = [
     {

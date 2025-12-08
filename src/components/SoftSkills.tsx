@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 
 const SoftSkills = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { margin: "-100px" });
 
   const skills = [
     "Problem-solving",

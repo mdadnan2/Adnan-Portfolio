@@ -10,7 +10,7 @@ interface SkillBarProps {
 
 export const SkillBar = ({ name, level, icon, color }: SkillBarProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { amount: 0.5 });
 
   return (
     <div ref={ref} className="mb-6">

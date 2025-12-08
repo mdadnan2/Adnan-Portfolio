@@ -7,7 +7,7 @@ import { Calendar, MapPin, CheckCircle2 } from "lucide-react";
 
 const Experience = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { margin: "-100px" });
 
   const achievements = [
     "Designed RESTful APIs using Node.js, Express.js, Nest.js, and Hono.js",
