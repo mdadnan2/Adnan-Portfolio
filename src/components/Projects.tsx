@@ -61,8 +61,13 @@ const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="relative group"
             >
-              <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+              {/* Glow effect on hover */}
+              <div className={`absolute -inset-0.5 bg-gradient-to-r ${project.gradient} rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-500`} />
+              
+              <Card className="relative p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col overflow-hidden">
                 {/* Animated gradient background on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
                 

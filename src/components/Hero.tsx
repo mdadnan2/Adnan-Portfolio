@@ -27,26 +27,25 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24">
-      {/* Animated background particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+      {/* Floating Bubbles Background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+        {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-primary rounded-full"
+            className="absolute w-2 h-2 bg-primary/20 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              scale: Math.random() * 2,
-              opacity: Math.random() * 0.5,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+              y: typeof window !== 'undefined' ? window.innerHeight : 1000,
             }}
             animate={{
-              y: [null, Math.random() * window.innerHeight],
-              opacity: [null, Math.random() * 0.5],
+              y: -100,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
             }}
             transition={{
-              duration: Math.random() * 10 + 10,
+              duration: Math.random() * 10 + 15,
               repeat: Infinity,
               ease: "linear",
+              delay: Math.random() * 5,
             }}
           />
         ))}
@@ -87,7 +86,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto"
           >
-            1.9+ Years Experience | Node.js, TypeScript, REST APIs
+            2+ Years Experience | Node.js, TypeScript, REST APIs
           </motion.p>
 
           {/* Location */}

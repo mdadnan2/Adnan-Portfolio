@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Badge } from "@/components/ui/badge";
+import { SkillBar } from "@/components/ui/skill-bar";
+import { Server, Code, Database, GitBranch, Shield, Cloud } from "lucide-react";
 
 const Skills = () => {
   const ref = useRef(null);
@@ -51,6 +53,25 @@ const Skills = () => {
           </p>
         </motion.div>
 
+        {/* Top Skills with Animated Bars */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-16 max-w-3xl mx-auto"
+        >
+          <h3 className="text-2xl font-semibold mb-6 text-center">Core Expertise</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
+            <SkillBar name="Node.js" level={90} icon={<Server size={20} className="text-green-500" />} color="bg-gradient-to-r from-green-500 to-emerald-500" />
+            <SkillBar name="TypeScript" level={85} icon={<Code size={20} className="text-blue-500" />} color="bg-gradient-to-r from-blue-500 to-cyan-500" />
+            <SkillBar name="MongoDB" level={85} icon={<Database size={20} className="text-green-600" />} color="bg-gradient-to-r from-green-600 to-green-400" />
+            <SkillBar name="PostgreSQL" level={80} icon={<Database size={20} className="text-blue-600" />} color="bg-gradient-to-r from-blue-600 to-blue-400" />
+            <SkillBar name="REST APIs" level={90} icon={<Cloud size={20} className="text-purple-500" />} color="bg-gradient-to-r from-purple-500 to-pink-500" />
+            <SkillBar name="Git" level={85} icon={<GitBranch size={20} className="text-orange-500" />} color="bg-gradient-to-r from-orange-500 to-red-500" />
+          </div>
+        </motion.div>
+
+        {/* All Skills */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div

@@ -108,6 +108,44 @@ export default {
             backgroundPosition: "1000px 0",
           },
         },
+        "blob": {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -50px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9)",
+          },
+          "100%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+        },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-20px)",
+          },
+        },
+        "drift": {
+          "0%, 100%": {
+            transform: "translate(0px, 0px)",
+          },
+          "50%": {
+            transform: "translate(40px, -40px)",
+          },
+        },
+        "orbit": {
+          "0%": {
+            transform: "rotate(0deg) translateX(50px) rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg) translateX(50px) rotate(-360deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -115,6 +153,10 @@ export default {
         "fade-in": "fade-in 0.5s ease-out",
         "slide-in": "slide-in 0.5s ease-out",
         "shimmer": "shimmer 3s ease-in-out infinite",
+        "blob": "blob 7s infinite",
+        "float": "float 6s ease-in-out infinite",
+        "drift": "drift 8s ease-in-out infinite",
+        "orbit": "orbit 15s linear infinite",
       },
     },
   },

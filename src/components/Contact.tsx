@@ -54,9 +54,17 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
             Get In Touch
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg mb-4">
             Let's discuss how I can contribute to your next project
           </p>
+          {/* Availability Badge */}
+          <div className="flex items-center justify-center gap-2 text-sm">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
+            </span>
+            <span className="text-muted-foreground">Available for new opportunities</span>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
@@ -97,7 +105,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center"
+          className="flex flex-col items-center gap-4"
         >
           <Button
             size="lg"
@@ -112,6 +120,9 @@ const Contact = () => {
             <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
             Download Resume
           </Button>
+          
+          {/* Quick Response Badge */}
+          <p className="text-sm text-muted-foreground">⚡ Usually responds within 24 hours</p>
         </motion.div>
       </div>
     </section>
