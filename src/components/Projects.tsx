@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ExternalLink, Code2 } from "lucide-react";
 
 
 const Projects = () => {
@@ -11,6 +12,40 @@ const Projects = () => {
   const isInView = useInView(ref, { margin: "-100px" });
 
   const projects = [
+    {
+      title: "Tiffin Management System",
+      description: "A production-ready full-stack meal management platform with enterprise-grade backend architecture, JWT authentication, and real-time analytics.",
+      techStack: {
+        backend: ["NestJS", "TypeScript", "Prisma ORM", "PostgreSQL", "JWT", "Swagger"],
+        frontend: ["Next.js 14", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+        infrastructure: ["Vercel", "Render", "Supabase"]
+      },
+      backendResponsibilities: [
+        "API Architecture: Designed RESTful APIs with clean Controller → Service → Repository pattern",
+        "Authentication System: Implemented JWT-based auth with refresh tokens and role-based access control",
+        "Database Design: Architected PostgreSQL schema with Prisma ORM for type-safe operations",
+        "Security Implementation: Applied bcrypt hashing, input validation, SQL injection prevention",
+        "Bulk Operations: Built efficient bulk meal scheduling with date range and filtering logic",
+        "Real-time Analytics: Developed dashboard APIs with monthly/weekly statistics aggregation"
+      ],
+      systemFeatures: [
+        "Multi-role Authentication - JWT with refresh tokens, RBAC (User/Admin)",
+        "Meal Management - CRUD operations, bulk scheduling, calendar integration",
+        "Dynamic Pricing - Per-user pricing with history tracking",
+        "Analytics Dashboard - Real-time statistics and spending insights",
+        "Admin Panel - User management and system-wide analytics"
+      ],
+      architectureHighlights: [
+        "Modular Design: Clean separation of concerns with dependency injection",
+        "Type Safety: Full TypeScript implementation with DTO validation",
+        "Scalable Structure: Ready for microservices evolution",
+        "Production Security: Bcrypt hashing, JWT tokens, protected routes"
+      ],
+      liveUrl: "https://tiffin-management-service.vercel.app/",
+      apiDocsUrl: "https://tiffin-management-system-4uoa.onrender.com/api/docs#/",
+      gradient: "from-emerald-500 to-blue-500",
+      featured: true
+    },
     {
       title: "Community Collaborative Application",
       description: "A comprehensive application enabling community members to receive announcements, event updates, and prayer timings with real-time notifications.",
@@ -38,7 +73,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 bg-card/30">
+    <section id="projects" className="py-20 px-4 bg-slate-50/50 dark:bg-card/30">
       <div className="container mx-auto max-w-6xl" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +89,7 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -67,48 +102,160 @@ const Projects = () => {
               {/* Glow effect on hover */}
               <div className={`absolute -inset-0.5 bg-gradient-to-r ${project.gradient} rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-500`} />
               
-              <Card className="relative p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col overflow-hidden">
+              <Card className={`relative p-8 bg-white/80 dark:bg-card border-slate-200/60 dark:border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col overflow-hidden ${
+                project.featured ? 'border-2 border-emerald-200/80 dark:border-primary/30' : ''
+              }`}>
                 {/* Animated gradient background on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
                 
                 <div className="relative z-10 flex-1">
-                  <div className="mb-4">
+                  <div className="mb-4 flex items-center justify-between">
                     <h3 className="text-2xl font-bold">{project.title}</h3>
+                    {project.featured && (
+                      <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-primary/20 dark:text-primary dark:border-primary/30">
+                        Featured
+                      </Badge>
+                    )}
                   </div>
 
                   <p className="text-muted-foreground mb-6">
                     {project.description}
                   </p>
 
-                  <div className="space-y-4 mb-6">
-                    <h4 className="text-sm font-semibold text-primary">Key Features</h4>
-                    <ul className="space-y-2">
-                      {project.features.map((feature, idx) => (
-                        <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {/* Featured project layout */}
+                  {project.featured ? (
+                    <div className="space-y-6">
+                      {/* Tech Stack */}
+                      <div className="space-y-4">
+                        <h4 className="text-sm font-semibold text-primary">Technology Stack</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          <div>
+                            <p className="text-xs font-medium text-muted-foreground mb-2">Backend (Core Focus)</p>
+                            <div className="flex flex-wrap gap-1">
+                              {project.techStack.backend.map((tech, idx) => (
+                                <Badge key={idx} variant="secondary" className="text-xs bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20">
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                          <div>
+                            <p className="text-xs font-medium text-muted-foreground mb-2">Frontend</p>
+                            <div className="flex flex-wrap gap-1">
+                              {project.techStack.frontend.map((tech, idx) => (
+                                <Badge key={idx} variant="secondary" className="text-xs bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-500/10 dark:text-blue-400 dark:border-blue-500/20">
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                          <div>
+                            <p className="text-xs font-medium text-muted-foreground mb-2">Infrastructure</p>
+                            <div className="flex flex-wrap gap-1">
+                              {project.techStack.infrastructure.map((tech, idx) => (
+                                <Badge key={idx} variant="secondary" className="text-xs bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-500/10 dark:text-purple-400 dark:border-purple-500/20">
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-                  <div className="space-y-3">
-                    <h4 className="text-sm font-semibold text-primary">Tech Stack</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.techStack.map((tech, idx) => (
-                        <Badge
-                          key={idx}
-                          variant="secondary"
-                          className="bg-muted hover:bg-primary/20 transition-colors duration-300"
+                      {/* Backend Responsibilities */}
+                      <div className="space-y-3">
+                        <h4 className="text-sm font-semibold text-primary">Backend Engineering Responsibilities</h4>
+                        <ul className="space-y-2">
+                          {project.backendResponsibilities.map((responsibility, idx) => (
+                            <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                              <span className="text-emerald-600 dark:text-emerald-400 mt-1 font-bold">•</span>
+                              <span>{responsibility}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* System Features */}
+                      <div className="space-y-3">
+                        <h4 className="text-sm font-semibold text-primary">Key System Features</h4>
+                        <ul className="space-y-2">
+                          {project.systemFeatures.map((feature, idx) => (
+                            <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                              <span className="text-blue-600 dark:text-blue-400 mt-1 font-bold">•</span>
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Architecture Highlights */}
+                      <div className="space-y-3">
+                        <h4 className="text-sm font-semibold text-primary">Architecture & Security Highlights</h4>
+                        <ul className="space-y-2">
+                          {project.architectureHighlights.map((highlight, idx) => (
+                            <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                              <span className="text-purple-600 dark:text-purple-400 mt-1 font-bold">•</span>
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* CTA Buttons */}
+                      <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                        <Button 
+                          asChild 
+                          className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white border-0"
                         >
-                          {tech}
-                        </Badge>
-                      ))}
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                            <ExternalLink className="w-4 h-4" />
+                            Try Live Application
+                          </a>
+                        </Button>
+                        <Button 
+                          asChild 
+                          variant="outline" 
+                          className="border-primary/30 hover:bg-primary/10"
+                        >
+                          <a href={project.apiDocsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                            <Code2 className="w-4 h-4" />
+                            Explore API Documentation
+                          </a>
+                        </Button>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    /* Regular project layout */
+                    <>
+                      <div className="space-y-4 mb-6">
+                        <h4 className="text-sm font-semibold text-primary">Key Features</h4>
+                        <ul className="space-y-2">
+                          {project.features.map((feature, idx) => (
+                            <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                              <span className="text-primary mt-1">•</span>
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="space-y-3">
+                        <h4 className="text-sm font-semibold text-primary">Tech Stack</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {project.techStack.map((tech, idx) => (
+                            <Badge
+                              key={idx}
+                              variant="secondary"
+                              className="bg-muted hover:bg-primary/20 transition-colors duration-300"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
-
-
               </Card>
             </motion.div>
           ))}
