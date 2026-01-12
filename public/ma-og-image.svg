@@ -1,0 +1,16 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="180" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="url(#textGradient)">MA</text>
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="36" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#94a3b8">Mohammad Adnan</text>
+  <text x="600" y="450" font-family="Arial, sans-serif" font-size="28" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#64748b">Backend Developer</text>
+</svg>
