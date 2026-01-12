@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><title>Generate MA Logo</title></head>
+<body>
+<canvas id="canvas" width="1200" height="630"></canvas>
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+// Dark background
+const bgGradient = ctx.createLinearGradient(0, 0, 1200, 630);
+bgGradient.addColorStop(0, '#0f172a');
+bgGradient.addColorStop(1, '#1e293b');
+ctx.fillStyle = bgGradient;
+ctx.fillRect(0, 0, 1200, 630);
+
+// MA text with gradient
+const textGradient = ctx.createLinearGradient(0, 0, 1200, 630);
+textGradient.addColorStop(0, '#3b82f6');
+textGradient.addColorStop(1, '#8b5cf6');
+ctx.fillStyle = textGradient;
+ctx.font = 'bold 180px Arial';
+ctx.textAlign = 'center';
+ctx.fillText('MA', 600, 300);
+
+// Name
+ctx.fillStyle = '#94a3b8';
+ctx.font = 'bold 36px Arial';
+ctx.fillText('Mohammad Adnan', 600, 400);
+
+// Title
+ctx.fillStyle = '#64748b';
+ctx.font = '28px Arial';
+ctx.fillText('Backend Developer', 600, 450);
+
+// Download
+canvas.toBlob(blob => {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'ma-thumbnail.png';
+  a.click();
+});
+</script>
+</body>
+</html>
