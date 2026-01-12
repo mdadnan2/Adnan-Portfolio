@@ -4,7 +4,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/DevAdnanAnsari)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/mohammadadnan01/)
 
-> A modern, responsive portfolio website showcasing my journey as a Backend Developer with 1.8+ years of experience in Node.js, TypeScript, and REST API development.
+> A modern, responsive portfolio website showcasing my journey as a Backend Developer with 2+ years of experience in Node.js, TypeScript, and REST API development.
 
 ## 🎯 Project Overview
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MA Logo Generator</title>
+</head>
+<body>
+    <canvas id="canvas" width="1200" height="630" style="border: 1px solid #ccc;"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Create gradient background
+        const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+        gradient.addColorStop(0, '#3b82f6');
+        gradient.addColorStop(1, '#8b5cf6');
+        
+        // Fill background
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 1200, 630);
+        
+        // Add MA text
+        ctx.fillStyle = 'white';
+        ctx.font = 'bold 200px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('MA', 600, 315);
+        
+        // Add subtitle
+        ctx.font = 'bold 40px Arial, sans-serif';
+        ctx.fillText('Backend Developer', 600, 450);
+        
+        // Convert to blob and download
+        canvas.toBlob(function(blob) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ma-og-image.png';
+            a.click();
+        });
+    </script>
+</body>
+</html>
