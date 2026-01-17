@@ -47,6 +47,40 @@ const Projects = () => {
       featured: true
     },
     {
+      title: "Coaching Management System",
+      description: "A comprehensive SaaS-style platform for efficient coaching institute operations management with multi-role authentication and advanced features.",
+      techStack: {
+        backend: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Nodemailer"],
+        frontend: ["React 18", "Redux Toolkit", "Material-UI", "Axios", "Framer Motion"],
+        infrastructure: ["Vercel", "MongoDB Atlas"]
+      },
+      backendResponsibilities: [
+        "API Architecture: Built RESTful APIs with modular service-based architecture and clean separation of concerns",
+        "Authentication System: Implemented JWT-based auth with role-based access control (Super Admin, Admin, Student)",
+        "Database Design: Architected MongoDB schemas with Mongoose for student, course, and chapter management",
+        "Security Implementation: Applied crypto-js encryption, password hashing, and comprehensive input validation",
+        "Email Service: Integrated Nodemailer for transactional emails with customizable templates",
+        "Advanced Features: Built filtering, pagination, search capabilities, and student status tracking system"
+      ],
+      systemFeatures: [
+        "Multi-role Authentication - JWT tokens with Super Admin, Admin, and Student roles",
+        "Student Management - Complete CRUD operations with status tracking (Active, Inactive, Completed)",
+        "Course Management - Detailed curriculum structure with chapter-wise content organization",
+        "Email Notifications - Automated email system with customizable templates and preferences",
+        "Advanced Filtering - Comprehensive search, pagination, and filtering capabilities"
+      ],
+      architectureHighlights: [
+        "Clean Architecture: Modular structure with Controllers, Services, Models, and Middleware layers",
+        "Centralized Error Handling: Comprehensive logging and structured error responses",
+        "Environment Configuration: Secure environment-based configuration management",
+        "Production Ready: Health check endpoints, session management, and security middleware"
+      ],
+      liveUrl: "https://coaching360.vercel.app/",
+      githubUrl: "https://github.com/mdadnan2/Coaching-Management-System",
+      gradient: "from-blue-500 to-purple-500",
+      featured: true
+    },
+    {
       title: "Community Collaborative Application",
       description: "A comprehensive application enabling community members to receive announcements, event updates, and prayer timings with real-time notifications.",
       features: [
@@ -56,18 +90,6 @@ const Projects = () => {
         "Modular architecture for scalability"
       ],
       techStack: ["Node.js", "TypeScript", "MongoDB", "JWT", "Hono.js", "Jest"],
-      gradient: "from-blue-500 to-purple-500"
-    },
-    {
-      title: "Coaching Management Portal",
-      description: "A comprehensive platform for coaching centers to streamline student management, course scheduling, attendance tracking, and communication.",
-      features: [
-        "User registration and course management APIs",
-        "Optimized queries for dashboard performance",
-        "Modular, reusable API design",
-        "Complete documentation system"
-      ],
-      techStack: ["JavaScript", "Node.js", "MongoDB", "Express.js", "Postman"],
       gradient: "from-purple-500 to-pink-500"
     }
   ];
@@ -103,7 +125,7 @@ const Projects = () => {
               <div className={`absolute -inset-0.5 bg-gradient-to-r ${project.gradient} rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-500`} />
               
               <Card className={`relative p-8 bg-white/80 dark:bg-card border-slate-200/60 dark:border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col overflow-hidden ${
-                project.featured ? 'border-2 border-emerald-200/80 dark:border-primary/30' : ''
+                project.featured ? 'border-2 border-primary/30 dark:border-primary/30' : ''
               }`}>
                 {/* Animated gradient background on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
@@ -112,7 +134,7 @@ const Projects = () => {
                   <div className="mb-4 flex items-center justify-between">
                     <h3 className="text-2xl font-bold">{project.title}</h3>
                     {project.featured && (
-                      <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-primary/20 dark:text-primary dark:border-primary/30">
+                      <Badge className="bg-primary/10 text-primary border-primary/30">
                         Featured
                       </Badge>
                     )}
@@ -205,23 +227,37 @@ const Projects = () => {
                       <div className="flex flex-col sm:flex-row gap-3 pt-4">
                         <Button 
                           asChild 
-                          className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white border-0"
+                          className={`bg-gradient-to-r ${project.gradient} hover:opacity-90 text-white border-0`}
                         >
                           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                             <ExternalLink className="w-4 h-4" />
                             Try Live Application
                           </a>
                         </Button>
-                        <Button 
-                          asChild 
-                          variant="outline" 
-                          className="border-primary/30 hover:bg-primary/10"
-                        >
-                          <a href={project.apiDocsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                            <Code2 className="w-4 h-4" />
-                            Explore API Documentation
-                          </a>
-                        </Button>
+                        {project.apiDocsUrl && (
+                          <Button 
+                            asChild 
+                            variant="outline" 
+                            className="border-primary/30 hover:bg-primary/10"
+                          >
+                            <a href={project.apiDocsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                              <Code2 className="w-4 h-4" />
+                              Explore API Documentation
+                            </a>
+                          </Button>
+                        )}
+                        {project.githubUrl && (
+                          <Button 
+                            asChild 
+                            variant="outline" 
+                            className="border-primary/30 hover:bg-primary/10"
+                          >
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                              <Code2 className="w-4 h-4" />
+                              View Source Code
+                            </a>
+                          </Button>
+                        )}
                       </div>
                     </div>
                   ) : (
