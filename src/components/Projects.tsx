@@ -9,7 +9,7 @@ import { ExternalLink, Code2 } from "lucide-react";
 
 const Projects = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const projects = [
     {
@@ -151,36 +151,69 @@ const Projects = () => {
                       <div className="space-y-4">
                         <h4 className="text-sm font-semibold text-primary">Technology Stack</h4>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                          <div>
+                          <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                          >
                             <p className="text-xs font-medium text-muted-foreground mb-2">Backend (Core Focus)</p>
                             <div className="flex flex-wrap gap-1">
                               {project.techStack.backend.map((tech, idx) => (
-                                <Badge key={idx} variant="secondary" className="text-xs bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20">
-                                  {tech}
-                                </Badge>
+                                <motion.div
+                                  key={idx}
+                                  initial={{ opacity: 0, scale: 0.8 }}
+                                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                                  transition={{ duration: 0.3, delay: 0.4 + idx * 0.05 }}
+                                >
+                                  <Badge variant="secondary" className="text-xs bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20">
+                                    {tech}
+                                  </Badge>
+                                </motion.div>
                               ))}
                             </div>
-                          </div>
-                          <div>
+                          </motion.div>
+                          <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                            transition={{ duration: 0.5, delay: 0.5 }}
+                          >
                             <p className="text-xs font-medium text-muted-foreground mb-2">Frontend</p>
                             <div className="flex flex-wrap gap-1">
                               {project.techStack.frontend.map((tech, idx) => (
-                                <Badge key={idx} variant="secondary" className="text-xs bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-500/10 dark:text-blue-400 dark:border-blue-500/20">
-                                  {tech}
-                                </Badge>
+                                <motion.div
+                                  key={idx}
+                                  initial={{ opacity: 0, scale: 0.8 }}
+                                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                                  transition={{ duration: 0.3, delay: 0.6 + idx * 0.05 }}
+                                >
+                                  <Badge variant="secondary" className="text-xs bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-500/10 dark:text-blue-400 dark:border-blue-500/20">
+                                    {tech}
+                                  </Badge>
+                                </motion.div>
                               ))}
                             </div>
-                          </div>
-                          <div>
+                          </motion.div>
+                          <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                            transition={{ duration: 0.5, delay: 0.7 }}
+                          >
                             <p className="text-xs font-medium text-muted-foreground mb-2">Infrastructure</p>
                             <div className="flex flex-wrap gap-1">
                               {project.techStack.infrastructure.map((tech, idx) => (
-                                <Badge key={idx} variant="secondary" className="text-xs bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-500/10 dark:text-purple-400 dark:border-purple-500/20">
-                                  {tech}
-                                </Badge>
+                                <motion.div
+                                  key={idx}
+                                  initial={{ opacity: 0, scale: 0.8 }}
+                                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                                  transition={{ duration: 0.3, delay: 0.8 + idx * 0.05 }}
+                                >
+                                  <Badge variant="secondary" className="text-xs bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-500/10 dark:text-purple-400 dark:border-purple-500/20">
+                                    {tech}
+                                  </Badge>
+                                </motion.div>
                               ))}
                             </div>
-                          </div>
+                          </motion.div>
                         </div>
                       </div>
 
