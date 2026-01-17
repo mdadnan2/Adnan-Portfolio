@@ -41,7 +41,7 @@ const Projects = () => {
         "Scalable Structure: Ready for microservices evolution",
         "Production Security: Bcrypt hashing, JWT tokens, protected routes"
       ],
-      liveUrl: "https://tiffin-management-service.vercel.app/",
+      liveUrl: "https://tiffin360.vercel.app/",
       apiDocsUrl: "https://tiffin-management-system-4uoa.onrender.com/api/docs#/",
       gradient: "from-emerald-500 to-blue-500",
       featured: true
