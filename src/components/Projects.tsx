@@ -76,6 +76,7 @@ const Projects = () => {
         "Production Ready: Health check endpoints, session management, and security middleware"
       ],
       liveUrl: "https://coaching360.vercel.app/",
+      apiDocsUrl: "http://localhost:5010/api-docs",
       githubUrl: "https://github.com/mdadnan2/Coaching-Management-System",
       gradient: "from-blue-500 to-purple-500",
       featured: true
