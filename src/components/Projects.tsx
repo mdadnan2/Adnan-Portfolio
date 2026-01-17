@@ -43,6 +43,7 @@ const Projects = () => {
       ],
       liveUrl: "https://tiffin360.vercel.app/",
       apiDocsUrl: "https://tiffin-management-system-4uoa.onrender.com/api/docs#/",
+      githubUrl: "https://github.com/mdadnan2/tiffin-management-service",
       gradient: "from-emerald-500 to-blue-500",
       featured: true
     },
