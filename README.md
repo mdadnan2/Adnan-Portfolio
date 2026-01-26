@@ -1,7 +1,7 @@
 # 🚀 Mohammad Adnan - Portfolio Website
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://mdadnan.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/DevAdnanAnsari)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/mdadnan2/Adnan-Portfolio)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/mohammadadnan01/)
 
 > A modern, responsive portfolio website showcasing my journey as a Backend Developer with 2+ years of experience in Node.js, TypeScript, and REST API development.
@@ -91,7 +91,7 @@ Mohammad-Adnan/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/DevAdnanAnsari/portfolio.git
+   git clone https://github.com/mdadnan2/Adnan-Portfolio.git
    cd Mohammad-Adnan
    ```
 
