@@ -67,7 +67,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 {project.title}
               </CardTitle>
               <CardDescription className="text-sm font-medium">
-                {project.subtitle}
+                {project.tagline}
               </CardDescription>
             </div>
           </div>
@@ -87,26 +87,19 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             <p className="text-xs text-muted-foreground">{project.architecture}</p>
           </div>
 
-          {/* Key Features */}
+          {/* Metrics */}
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <FileCode className="h-3 w-3" />
-              <span className="font-medium">Key Features:</span>
+              <Database className="h-3 w-3" />
+              <span className="font-medium">Architecture:</span>
             </div>
-            <ul className="text-xs text-muted-foreground space-y-1">
-              {project.features.slice(0, 3).map((feature, idx) => (
-                <li key={idx} className="flex items-start gap-2">
-                  <span className="text-primary mt-0.5">•</span>
-                  <span>{feature}</span>
-                </li>
+            <div className="flex flex-wrap gap-2">
+              {project.metrics.map((metric, idx) => (
+                <span key={idx} className="text-xs px-2 py-1 rounded bg-muted/50 border border-muted">
+                  <span className="font-medium">{metric.label}:</span> {metric.value}
+                </span>
               ))}
-            </ul>
-          </div>
-
-          {/* Performance */}
-          <div className="flex items-center gap-2 p-3 rounded-lg bg-muted/50 border border-muted">
-            <Database className="h-4 w-4 text-green-500" />
-            <span className="text-xs font-medium">{project.performance}</span>
+            </div>
           </div>
 
           {/* Tech Stack */}
