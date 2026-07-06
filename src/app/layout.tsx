@@ -18,6 +18,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mdadnan.vercel.app"),
+  icons: {
+    icon: "/favicon.svg",
+  },
   title: {
     default: "Mohammad Adnan | Backend Engineer",
     template: "%s | Mohammad Adnan",
